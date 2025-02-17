@@ -1,0 +1,20 @@
+.row{
+		padding-top: 5px;
+	}
+	.in{
+		border-width: 1;
+		border-bottom-width: 2px;
+		border-color: #880f0f;
+		border-radius: 0px;
+		margin-bottom: 15px;
+	}
+	.in:hover{
+		border-bottom-width: 3px;
+		border-radius: 0px;
+	}.in:focus{
+		box-shadow: 0 0 0 0;
+		outline: 0;
+	}
+	.divin{
+		margin-top: 10px
+}
