@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-	<title>Sistema Escolar Tania</title>
+	<title>Centro infantil e externato Nhonchane</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -39,7 +39,7 @@
 						Seja bem vindo
 					</span>
 					<span class="login100-form-title ">
-						<p class="" style="color: #880f0f;"><b><i>S</i>igma V1</b></p>
+						<p class="" style="color: #880f0f;"><b><i>C</i>entro infantil e externato Nhonchane</b></p>
 		                    
 					</span>
 					<?php
@@ -73,12 +73,13 @@
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							Esqueceste a sua senha?
+							<!--Esqueceste a sua senha?-->
+							
 						</span>
 
-						<a class="txt2" href="recuperacao-de-senha.php">
+						<!--<a class="txt2" href="recuperacao-de-senha.php">
 							Clique aqui
-						</a>
+						</a>-->
 					</div>
 				</form>
 			</div>

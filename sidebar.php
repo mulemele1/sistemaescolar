@@ -5,9 +5,9 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="painel_inicial.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <!-- <i class="fas fa-laugh-wink"></i> -->
-          <i style="font-size:36pt">S</i>
+          <i style="font-size:36pt">C</i>
         </div>
-        <div class="sidebar-brand-text mx-3">Nhonchane<sup ><i class="rotate-n-15">v1</i></sup></div>
+        <div class="sidebar-brand-text mx-3">Nhonchane<sup ><i class="rotate-n-15">tn</i></sup></div>
       </a>
       
       <!-- Divider -->
