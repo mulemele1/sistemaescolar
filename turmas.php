@@ -19,7 +19,7 @@ $q=@$_GET['q'];
                 <h1 class="h3 mb-0 text-gray-800">Turmas</h1>
             </div>
             <div class="col-lg-2 p-0 m-0 text-right">
-                <a href="#" data-toggle="modal" data-target="#cad_turma" class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-100"></i> </a>
+                <!--<a href="#" data-toggle="modal" data-target="#cad_turma" class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-100"></i> </a>-->
             </div>
             
         </div>

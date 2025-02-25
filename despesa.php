@@ -13,7 +13,7 @@ include 'principal.php';
     <!-- Content Row -->
     <div class="row justify-content-center"> <!-- Centraliza a linha -->
         <div class="col-md-12"> <!-- Usa toda a largura disponível -->
-            <h1 class="text-center">Relatório</h1>
+            <h1 class="text-center">Despesa</h1>
             <br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
     </div>

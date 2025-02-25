@@ -33,27 +33,6 @@ include 'principal.php';
                 </div>
               </a>
             </div>
-
-            
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-4 col-xs-6 col-md-4 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <a href="alunos.php" title="">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Alunos</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$aluno->total_alunos(); ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-graduation-cap fa-3x text-gray-300"></i>
-                        </div>
-                    </div>
-                  </a>
-                </div>
-            </div>
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
@@ -73,8 +52,27 @@ include 'principal.php';
                   </a>
                 </div>
             </div>
-        </div> 
 
+            
+        </div>
+
+
+        <div class="col-xl-4 col-xs-6 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <a href="alunos.php" title="">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Alunos</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$aluno->total_alunos(); ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-graduation-cap fa-3x text-gray-300"></i>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
         <!-- Earnings (Monthly) Card Example -->
         <!-- <div class="col-xl-4 col-xs-6 col-md-4 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
@@ -101,7 +99,7 @@ include 'principal.php';
                   </a>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-4 col-xs-6 col-md-4 mb-4">

@@ -23,9 +23,8 @@
                   <thead >
                     <tr class="filters">
                       <th>Nome</th>
-                      <th>Bairro</th>
-                      <th>Celular de Responsavel</th>
-                      <th>Genero</th>
+                      <th>Nr Documento</th>
+                      <th>Celular</th>
                       <th>Turma</th>
                       <th>Acções</th>
                     </tr>

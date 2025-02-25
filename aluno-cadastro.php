@@ -95,7 +95,7 @@ $validade_max=$validade_max."-12-31";
                                     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                         <label>Data de nascimento</label>
 
-                                        <input type="text" onfocus="(this.type = 'date')" class="input-xs form-control in" id="dob" name="data_nascimento_aluno" value="" placeholder="Data de nascimento" min="<?=$idade_min?>">
+                                        <input type="text" onfocus="(this.type = 'date')" class="input-xs form-control in" id="dob" name="data_nascimento_aluno" value="" placeholder="Data de nascimento" min="<?=$idade_min?>" max="<?=$idade_max?>">
 
                                     </div>
 
@@ -108,11 +108,7 @@ $validade_max=$validade_max."-12-31";
 
                                             <option value="Bilhete de identidade" >Bilhete de identidade</option> 
 
-                                            <option value="Passaporte" >Passaporte</option>
-                                            
-                                            <option value="Cedula" >Cedula</option>
-                                            
-                                            <option value="Sem documento" >Sem documento</option>
+                                            <option value="Passaporte" >Passaporte</option> 
 
                                         </select>
 

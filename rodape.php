@@ -5,7 +5,7 @@
 <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span><i hidden="">Todos direitos reservados</i>Copyright &copy; <a href="mailto:taniamatusse@gmail.com"> tania</a> 2025</span>
+            <span><i>Todos direitos reservados </i>/ Copyright &copy; <a href="mailto:taniamatusse@gmail.com"> Nhonchane</a> 2025</span>
           </div>
         </div>
 </footer>

@@ -22,16 +22,18 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      
+      <!-- Divider -->
+      <!-- Nav Item - Turmas -->
+
   <?php if($_SESSION['usuarioNivelAcesso'] < 3){ ?>
-    <!-- Nav Item - Turmas -->
+    <!-- Nav Item - Turmas Centro infantil e externato Nhonchane-->
     <li class="nav-item">
         <a class="nav-link" href="administracao.php">
           <i class="fas fa-fw fa-book"></i>
           <span>Administração</span></a>
       </li>
-
-      <li class="nav-item">
+        
+    <li class="nav-item">
         <a class="nav-link" href="classes.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Classes</span></a>
@@ -48,33 +50,6 @@
           <i class="fas fa-fw fa-graduation-cap"></i>
           <span>Alunos</span></a>
       </li>
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="mensalidades.php">
-          <i class="fas fa-fw fa-dollar-sign"></i>
-          <span>Mensalidades</span></a>
-      </li>
-
-  <?php if($_SESSION['usuarioNivelAcesso'] < 3){ ?>
-      <!-- Divider -->
-       <!-- Nav Item - Relatorio -->
-    <li class="nav-item">
-        <a class="nav-link" href="relatorio.php">
-          <i class="fas fa-fw fa-book"></i>
-          <span>Relatorio</span></a>
-      </li>
-       
-      <!-- Nav Item - usuarios -->
-      <li class="nav-item">
-        <a class="nav-link" href="usuarios.php">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Usuários</span></a>
-      </li>
-  <?php } ?>
-      <!-- Divider -->
-      <!-- Nav Item - Turmas -->
-
       <!-- Nav Item - Professores -->
       <li class="nav-item" hidden="">
         <a class="nav-link" href="professores.php">
@@ -83,6 +58,36 @@
       </li>
 
   <?php } ?>
+
+  <?php if($_SESSION['usuarioNivelAcesso'] < 3){ ?>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="mensalidades.php">
+          <i class="fas fa-fw fa-dollar-sign"></i>
+          <span>Mensalidades</span></a>
+      </li>
+
+      <!-- Divider -->
+      <li class="nav-item">
+        <a class="nav-link" href="despesa.php">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Despesa</span></a>
+      </li>
+  
+      <!-- Divider -->
+      <li class="nav-item">
+        <a class="nav-link" href="relatorio.php">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Relatorio</span></a>
+      </li>
+      <!-- Nav Item - usuarios -->
+      <li class="nav-item">
+        <a class="nav-link" href="usuarios.php">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Usuários</span></a>
+      </li>
+  <?php } ?>
+
   <?php if($_SESSION['usuarioNivelAcesso'] < 3){ ?>
 
       <!-- Nav Item - Funcionários -->

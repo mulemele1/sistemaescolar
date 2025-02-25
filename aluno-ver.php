@@ -100,7 +100,7 @@ $validade_max=$validade_max."-12-31";
 
                                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                         <label>Tipo de documento</label>
-                                        <select class="input-xs form-control in" name="tipo_documento">
+                                        <select class="input-xs form-control in" name="tipo_documento" required="">
 
                                             <option <?=($rs['tipo_documento'] == "" ? "selected": ''); ?> value="">Tipo de documento</option>
 
@@ -108,11 +108,6 @@ $validade_max=$validade_max."-12-31";
 
                                             <option <?=($rs['tipo_documento'] == "Passaporte" ? "selected": ''); ?> value="Passaporte" >Passaporte</option> 
 
-                                            
-                                            <option <?=($rs['tipo_documento'] == "Cedula" ? "selected": ''); ?> value="Cedula" >Cedula</option> 
-                                            
-                                            <option <?=($rs['tipo_documento'] == "Sem documento" ? "selected": ''); ?> value="Sem documento" >Sem documento</option> 
-                                            
                                         </select>
 
                                     </div>
@@ -120,7 +115,7 @@ $validade_max=$validade_max."-12-31";
 
                                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                         <label>Número do documento</label>
-                                        <input type="text" class="input-xs form-control in" name="nr_documento" value="<?=$rs['nr_documento']; ?>" maxlength="13" placeholder="Número do documento">
+                                        <input type="text" class="input-xs form-control in" name="nr_documento" value="<?=$rs['nr_documento']; ?>" maxlength="13" placeholder="Número do documento" required="">
 
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -149,7 +144,7 @@ $validade_max=$validade_max."-12-31";
 
                                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                         <label>Validade</label>
-                                        <input type="text" class="input-xs form-control in" id="validade" min="<?=$validade_min; ?>" max="<?=$validade_max; ?>" name="validade_documento_inicial_aluno" value="<?=$rs['validade_documento_inicial_aluno']; ?>" placeholder="Documento Validade " onfocus="(this.type = 'date')">
+                                        <input type="text" class="input-xs form-control in" id="validade" min="<?=$validade_min; ?>" max="<?=$validade_max; ?>" name="validade_documento_inicial_aluno" value="<?=$rs['validade_documento_inicial_aluno']; ?>" placeholder="Documento Validade " onfocus="(this.type = 'date')" required="">
 
                                     </div>
 
@@ -246,12 +241,6 @@ $validade_max=$validade_max."-12-31";
                                         <input type="text" class="input-xs form-control in" id="telefone_alternativo" name="telefone_alternativo" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="<?=$rs['telefone_alternativo']; ?>" placeholder="Celular alternativo" maxlength="9">
 
                                     </div>
-
-                                    <div class="col-12">
-                                        <label style="margin-bottom: 0px;">Contactos</label>
-                                        <hr style="width: 100% !important; height: 1px; background-color: #880f0f">
-                                    </div>
-
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                         <label>Turma</label>

@@ -838,9 +838,8 @@ class aluno extends conexao {
                 $rs2=$this->q_matricula($rs['nr_aluno']);
                 $out .= "<tr>";
                 $out .= "<td>" . $rs['nome_aluno'] .' '. $rs['apelido_aluno'] . "</td>";
-                $out .= "<td>" . $rs['bairro'] . "</td>";
+                $out .= "<td>" . $rs['nr_documento'] . "</td>";
                 $out .= "<td>" . $rs['telefone'] . "</td>";
-                $out .= "<td>" . $rs['sexo_aluno'] . "</td>";
                 $out .= "<td>" . @$rs2['nome_classe'] . ' ' . @$rs2['nome_turma'] . "</td>";
                 $out .= "<td>
                                 

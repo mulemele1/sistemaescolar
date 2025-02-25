@@ -1,32 +1,61 @@
 <?php require_once "Class.class.php";
 $usuario = new usuario;
 $aluno = new aluno;
-if(isset($_POST['nome_aluno'])){
-    $foto="img/user.webp";
-    if (($_FILES["url_foto"]['size'])>2) {
-            function upload_imagem($file)
-            {
-                if (isset($file)) {
-                    $extensao=explode('.', $file["name"]);
-                    $novo_nome=rand().'.'.$extensao[1];
-                    $foto='../uploads/fotos/'.$novo_nome;
-                    move_uploaded_file($file['tmp_name'],$foto);
-                    $foto='uploads/fotos/'.$novo_nome;
-                    return $foto;
+if (isset($_POST['nome_aluno'])) {
+    $foto = "img/user.webp"; // Valor padrão para a foto
+
+    // Verifica se o arquivo foi enviado corretamente e se o tamanho é menor ou igual a 2MB
+    if (isset($_FILES["url_foto"]) && $_FILES["url_foto"]['error'] == UPLOAD_ERR_OK) {
+        if ($_FILES["url_foto"]['size'] <= 2 * 1024 * 1024) { // 2MB em bytes
+            $allowed_types = ['image/jpeg', 'image/png', 'image/webp'];
+            if (in_array($_FILES["url_foto"]['type'], $allowed_types)) {
+                $foto = upload_imagem($_FILES["url_foto"]);
+                if (!$foto) {
+                    echo "<p class='text-center alert alert-warning'>Erro ao fazer upload da imagem.</p>";
+                    $foto = "img/user.webp"; // Usa a imagem padrão em caso de erro
                 }
+            } else {
+                echo "<p class='text-center alert alert-warning'>Tipo de arquivo não permitido.</p>";
             }
-            
-            $foto=upload_imagem($_FILES["url_foto"]);
-            
-    }
-    if($aluno->inserir_aluno($_POST['tipo_documento'], $_POST['nr_documento'], $_POST['local_de_emissao'], $_POST['nome_aluno'], $_POST['apelido_aluno'], $_POST['nacionalidade_aluno'], $_POST['naturalidade_aluno'], $_POST['data_nascimento_aluno'], $_POST['validade_documento_inicial_aluno'], $_POST['sexo_aluno'], $_POST['bairro'], $_POST['quarteirao'], $_POST['casa'], $_POST['rua_avenida'], $_POST['telefone'], $_POST['telefone_alternativo'], $_POST['nome_do_pai'], $_POST['nome_da_mae'], $_POST['email'], $foto, $_POST['recibo'], $_POST['data_deposito'], $_POST['valor_inscricao'], $_POST['valor_mensalidade'])==1){
-        if (strlen(@$_POST['classe_turma'])>1) {
-            $aluno->matricula($aluno->ultimo_id()-1, @$_POST['classe_turma']);
+        } else {
+            echo "<p class='text-center alert alert-warning'>O arquivo de imagem deve ter no máximo 2MB.</p>";
         }
-        $usuario->inserir_usuario($_POST['nome_aluno'].' '.$_POST['apelido_aluno'], $_POST['nr_aluno'], 6, "12345678a", $aluno->ultimo_id()-1);
-        $url="alunos.php";
-            echo "<p class='text-center alert alert-success'>Aluno cadastrado com sucesso!</p>";
     }
+
+    // Sanitização dos dados de entrada
+    $nome_aluno = filter_input(INPUT_POST, 'nome_aluno', FILTER_SANITIZE_STRING);
+    $data_nascimento_aluno = filter_input(INPUT_POST, 'data_nascimento_aluno', FILTER_SANITIZE_STRING);
+    // Repita para os outros campos...
+
+    // Inserção do aluno
+    $id_aluno = $aluno->inserir_aluno(
+        $_POST['tipo_documento'], $_POST['nr_documento'], $_POST['local_de_emissao'], $nome_aluno, 
+        $_POST['apelido_aluno'], $_POST['nacionalidade_aluno'], $_POST['naturalidade_aluno'], 
+        $data_nascimento_aluno, $_POST['validade_documento_inicial_aluno'], $_POST['sexo_aluno'], 
+        $_POST['bairro'], $_POST['quarteirao'], $_POST['casa'], $_POST['rua_avenida'], 
+        $_POST['telefone'], $_POST['telefone_alternativo'], $_POST['nome_do_pai'], 
+        $_POST['nome_da_mae'], $_POST['email'], $foto, $_POST['recibo'], 
+        $_POST['data_deposito'], $_POST['valor_inscricao'], $_POST['valor_mensalidade']
+    );
+
+    if ($id_aluno) {
+        // Verifica se a classe/turma foi fornecida
+        if (isset($_POST['classe_turma']) && strlen($_POST['classe_turma']) > 1) {
+            $aluno->matricula($id_aluno, $_POST['classe_turma']);
+        }
+
+        // Inserção do usuário
+        $nr_aluno = isset($_POST['nr_aluno']) ? $_POST['nr_aluno'] : '';
+        $usuario->inserir_usuario(
+            $nome_aluno . ' ' . $_POST['apelido_aluno'], 
+            $nr_aluno, 6, "12345678a", $id_aluno
+        );
+
+        echo "<p class='text-center alert alert-success'>Aluno cadastrado com sucesso!</p>";
+    } else {
+        echo "<p class='text-center alert alert-danger'>Erro ao cadastrar aluno. Por favor, tente novamente.</p>";
+    }
+
 
 }elseif (isset($_POST['nome_professor'])) {
 	
